@@ -1,0 +1,49 @@
+# A simple graph
+graph {
+  a -- b;
+  b -- c;
+  a -- c;
+  d -- c;
+  e -- c;
+  e -- a;
+}
+# A simple digraph
+digraph {
+  a -> b;
+  b -> c;
+  c -> d;
+  d -> a;
+}
+# Adding labels to the nodes
+digraph {
+  a -> b[label="0.2",weight="0.2"];
+  a -> c[label="0.4",weight="0.4"];
+  c -> b[label="0.6",weight="0.6"];
+  c -> e[label="0.6",weight="0.6"];
+  e -> e[label="0.1",weight="0.1"];
+  e -> b[label="0.7",weight="0.7"];
+}
+# Colour the path
+graph {
+  a -- b -- d -- c -- f[color=red,penwidth=3.0];
+  b -- c;
+  d -- e;
+  e -- f;
+  a -- d;
+}
+
+# Subgraphs
+digraph {
+  subgraph cluster_0 {
+    label="Subgraph A";
+    a -> b;
+    b -> c;
+    c -> d;
+  }
+
+  subgraph cluster_1 {
+    label="Subgraph B";
+    a -> f;
+    f -> c;
+  }
+}

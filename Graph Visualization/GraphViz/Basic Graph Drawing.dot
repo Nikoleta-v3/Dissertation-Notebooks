@@ -1,0 +1,29 @@
+/* create a digraph G */
+
+digraph G {
+      layout ="circo"
+      size = "5,5";
+      main[shape=box]
+
+      main -> parse -> execute;
+      main -> init [style=dotted] ;
+      main -> cleanup;
+      #execute -> make_string ;
+      execute -> { make_string; printf}
+      init -> make_string;
+      main -> printf [style=bold,label="100 times"];
+      make_string [label="make a\nstring"];
+      edge [color=red];
+      node [shape=box,style=filled,color=".7 .3 1.0"];
+      execute -> compare;
+
+}
+
+digraph G {
+      a -> b -> c;
+      b -> d [label = "0.3"];
+      a [shape=polygon,sides=5,peripheries=2,color=lightblue,style=filled];
+      c [shape=plaintext ,sides=4,skew=.4,label="hello world"]
+      d [shape=invtriangle];
+      e [shape=polygon,sides=4,distortion= 0.8];
+}
